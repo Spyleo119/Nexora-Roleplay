@@ -266,24 +266,48 @@ nav button{text-align:left;padding:8px}
 <p>Hraj • RolePlay • Komunikuj</p>
 </footer>
 
+
 <script>
 function showPage(id){
-const target=document.getElementById(id);
-if(!target)return;
-document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-target.classList.add('active');
-document.getElementById('navigation').classList.remove('open');
-window.scrollTo({top:0,behavior:'smooth'});
-history.replaceState(null,'','#'+id);
+    const target = document.getElementById(id);
+    if (!target || !target.classList.contains('page')) return;
+
+    document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+    });
+
+    target.classList.add('active');
+
+    document.getElementById('navigation').classList.remove('open');
+
+    history.pushState(null, '', '#' + id);
+
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'instant'
+    });
 }
-window.addEventListener('load',()=>{
-const id=location.hash.slice(1);
-if(id && document.getElementById(id))showPage(id);
-});
-window.addEventListener('popstate',()=>{
-const id=location.hash.slice(1)||'home';
-showPage(id);
-});
+
+function loadPageFromAddress(){
+    const id = location.hash.slice(1) || 'home';
+    const target = document.getElementById(id);
+
+    document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+    });
+
+    (target && target.classList.contains('page')
+        ? target
+        : document.getElementById('home')
+    ).classList.add('active');
+
+    window.scrollTo(0, 0);
+}
+
+window.addEventListener('load', loadPageFromAddress);
+
+window.addEventListener('popstate', loadPageFromAddress);
 </script>
 </body>
 </html>
