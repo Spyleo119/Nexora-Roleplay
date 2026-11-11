@@ -3,436 +3,287 @@
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#09070e">
 <title>NEXORA | Premium Community</title>
-<meta name="description" content="NEXORA – prémiová RolePlay komunita. Hraj, komunikuj a staň se součástí naší komunity.">
+<meta name="description" content="Oficiální web NEXORA – RolePlay komunita.">
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap');
 
-:root {
-  --bg:#09070e;
-  --panel:#13101c;
-  --gold:#e9b957;
-  --purple:#a34dff;
-  --text:#f7f2ff;
-  --muted:#aaa2b8;
+:root{
+--bg:#09070e;--panel:#15111e;--gold:#e9b957;
+--purple:#a34dff;--text:#f7f2ff;--muted:#aaa2b8;
 }
-
-*{margin:0;padding:0;box-sizing:border-box}
+*{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:Inter,Arial,sans-serif;
-  line-height:1.6;
-}
-a{text-decoration:none;color:inherit}
+body{background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
 button{font:inherit;cursor:pointer}
-
-header{
-  position:sticky;top:0;z-index:100;
-  background:rgba(9,7,14,.94);
-  backdrop-filter:blur(15px);
-  border-bottom:1px solid rgba(233,185,87,.35);
-}
-.nav{
-  max-width:1450px;margin:auto;padding:15px 5%;
-  display:flex;align-items:center;justify-content:space-between;gap:20px;
-}
-.logo{
-  font-family:Orbitron,sans-serif;font-weight:800;
-  font-size:25px;letter-spacing:3px;color:var(--gold);
-}
+header{position:sticky;top:0;z-index:20;background:#09070ef2;border-bottom:1px solid #e9b95755;backdrop-filter:blur(15px)}
+.nav{max-width:1400px;margin:auto;padding:15px 5%;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.logo{font:800 24px Orbitron;color:var(--gold);letter-spacing:3px}
 .logo span{color:white}
-nav{display:flex;align-items:center;gap:23px}
-nav a{font-size:13px;color:#e9e2f3;transition:.2s}
-nav a:hover{color:var(--gold)}
-.discord{
-  border:1px solid var(--purple);padding:10px 17px;
-  border-radius:12px;color:#d8aaff;
-  box-shadow:0 0 15px #8c35ff33;
-}
-.menu-btn{
-  display:none;background:none;border:0;color:white;font-size:27px;
-}
-
-.hero{
-  min-height:540px;display:flex;align-items:center;
-  position:relative;overflow:hidden;
-  background:
-    linear-gradient(90deg,rgba(5,4,10,.98),rgba(5,4,10,.65),rgba(5,4,10,.15)),
-    url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=2000&q=85') center/cover;
-  border-bottom:1px solid var(--gold);
-}
-.hero:after{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(ellipse at 75% 50%,#872bff30,transparent 50%);
-}
-.hero-content{
-  position:relative;z-index:1;max-width:1450px;
-  width:100%;margin:auto;padding:75px 5%;
-}
-.eyebrow{color:var(--gold);letter-spacing:5px;font-size:12px;font-weight:700}
-.hero h1{
-  font-family:Orbitron,sans-serif;font-size:clamp(48px,9vw,105px);
-  line-height:1.1;letter-spacing:5px;
-  background:linear-gradient(100deg,#fff1c8,#e9b957,#fff);
-  -webkit-background-clip:text;color:transparent;
-  margin:12px 0;
-}
-.hero h2{font-size:clamp(16px,3vw,27px);letter-spacing:7px;color:var(--gold)}
-.hero p{color:#e5deed;margin:20px 0 30px;letter-spacing:3px;font-size:13px}
-.btn{
-  display:inline-block;padding:13px 25px;border-radius:10px;
-  font-weight:700;transition:.25s;
-}
-.btn-gold{
-  color:#160e05;background:linear-gradient(110deg,#f8d98c,#d99a31);
-  box-shadow:0 0 25px #e9b95744;
-}
-.btn:hover{transform:translateY(-3px);filter:brightness(1.12)}
-.btn-purple{border:1px solid var(--purple);color:#d8aaff}
-
-main{max-width:1450px;margin:auto;padding:45px 5%}
-.section-title{
-  font-family:Orbitron,sans-serif;font-size:25px;
-  color:var(--gold);margin-bottom:10px;
-}
-.section-sub{color:var(--muted);margin-bottom:25px;font-size:14px}
-
-.layout{
-  display:grid;grid-template-columns:1fr 1.6fr 1fr;
-  gap:18px;align-items:start;
-}
-.panel{
-  background:linear-gradient(145deg,#171321,#0e0b14);
-  border:1px solid #8e6a344f;border-radius:17px;
-  padding:22px;box-shadow:0 8px 30px #0006;
-}
-.menu-list{display:grid;gap:10px}
-.menu-card{
-  display:block;padding:15px;border:1px solid #9c773b66;
-  border-radius:12px;background:#100d17;transition:.2s;
-}
-.menu-card:hover{border-color:var(--purple);transform:translateX(4px)}
-.menu-card strong{display:block;color:white;font-size:14px}
-.menu-card small{color:var(--muted);font-size:12px}
-.menu-icon{font-size:22px;color:var(--purple);margin-right:10px}
-.about h2{font-family:Orbitron,sans-serif;color:var(--gold);font-size:23px}
-.about p{color:#c7bfd2;font-size:14px;margin:13px 0 20px}
-.features{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center}
-.feature{padding:12px 4px;border-right:1px solid #8c6a3b}
-.feature:last-child{border:0}
-.feature span{display:block;font-size:25px;color:var(--gold)}
-.feature strong{font-size:12px}
-
-.quick-actions{display:grid;gap:10px;margin-top:18px}
-.action{
-  padding:12px;border-radius:10px;border:1px solid #8f54bf;
-  background:linear-gradient(90deg,#171020,#21102e);
-  color:#e4c5ff;text-align:left;font-size:13px;
-  transition:.2s;
-}
-.action:hover{border-color:var(--gold);color:var(--gold)}
-.discord-banner{
-  margin-top:18px;padding:23px;border-radius:15px;
-  border:1px solid var(--purple);
-  background:linear-gradient(100deg,#211032,#100d18);
-  display:flex;align-items:center;justify-content:space-between;gap:15px;
-}
-.discord-banner h3{font-size:17px}
-.discord-banner p{font-size:12px;color:var(--muted)}
-
-.stats{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:10px;margin-top:18px;
-}
-.stat{padding:17px 8px;text-align:center}
-.stat strong{display:block;color:var(--gold);font-size:22px}
+nav{display:flex;gap:17px;align-items:center}
+nav button{background:none;border:0;color:#eee5f7;font-size:13px}
+nav button:hover{color:var(--gold)}
+.menu{display:none;background:none;border:0;color:white;font-size:26px}
+.hero{min-height:450px;display:flex;align-items:center;background:linear-gradient(90deg,#07060cf5,#09070e88),url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1800&q=85') center/cover;border-bottom:1px solid var(--gold)}
+.hero-inner{max-width:1400px;width:100%;margin:auto;padding:75px 5%}
+.eyebrow{color:var(--gold);letter-spacing:5px;font-size:12px}
+.hero h1{font:800 clamp(55px,10vw,105px) Orbitron;letter-spacing:5px;color:var(--gold);margin:10px 0}
+.hero h2{font-size:clamp(16px,3vw,25px);letter-spacing:5px}
+.hero p{color:#c9bfd3;margin:15px 0 25px}
+.btn{display:inline-block;border:1px solid var(--gold);border-radius:9px;padding:12px 20px;color:var(--gold);background:#17111d;font-weight:700}
+.btn.gold{background:linear-gradient(110deg,#f8d98c,#d99a31);color:#160e05}
+main{max-width:1400px;margin:auto;padding:40px 5%}
+.title{font:700 25px Orbitron;color:var(--gold);margin-bottom:8px}
+.subtitle{color:var(--muted);font-size:14px;margin-bottom:25px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.card{background:linear-gradient(145deg,#191423,#100d17);border:1px solid #9c773b55;border-radius:15px;padding:22px;transition:.2s}
+.card:hover{border-color:var(--purple);transform:translateY(-3px)}
+.card .icon{font-size:28px;color:var(--purple)}
+.card h3{color:var(--gold);margin:8px 0}
+.card p{color:var(--muted);font-size:13px;margin-bottom:15px}
+.card button{background:none;border:0;color:#d5a4ff;font-weight:700}
+.card button:hover{color:var(--gold)}
+.home-layout{display:grid;grid-template-columns:1fr 1.6fr 1fr;gap:17px}
+.side{display:grid;gap:10px}
+.side button{padding:15px;text-align:left;border:1px solid #9c773b55;border-radius:11px;background:#15111e;color:white}
+.side button:hover{border-color:var(--purple)}
+.side small{display:block;color:var(--muted);font-size:11px}
+.panel{background:var(--panel);border:1px solid #9c773b55;border-radius:15px;padding:23px}
+.panel h2{color:var(--gold);font-family:Orbitron}
+.panel p{font-size:14px;color:#c9bfd3;margin:12px 0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}
+.stat{background:#0d0a13;padding:15px;text-align:center;border-radius:10px}
+.stat strong{display:block;color:var(--gold);font-size:20px}
 .stat span{font-size:11px;color:var(--muted)}
-
-.news-item{display:flex;gap:12px;margin-top:14px}
-.news-image{
-  width:75px;height:65px;border-radius:9px;flex-shrink:0;
-  background:linear-gradient(135deg,#50247c,#16101f);
-}
-.news-item strong{font-size:12px}
-.news-item p{font-size:11px;color:var(--muted)}
-
-.content-section{padding:65px 0 15px;scroll-margin-top:90px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.info-card{
-  padding:23px;border:1px solid #8e6a344f;border-radius:15px;
-  background:linear-gradient(145deg,#171321,#0e0b14);
-  transition:.2s;
-}
-.info-card:hover{border-color:var(--purple);transform:translateY(-4px)}
-.info-card .symbol{font-size:30px;color:var(--purple)}
-.info-card h3{color:var(--gold);margin:9px 0}
-.info-card p{color:var(--muted);font-size:13px;margin-bottom:15px}
-.info-card a{font-size:12px;color:#d9a9ff}
-
-.faq details{
-  background:var(--panel);border:1px solid #60457c;
-  padding:16px;border-radius:10px;margin:10px 0;
-}
-.faq summary{cursor:pointer;color:var(--gold);font-weight:600}
-.faq p{color:var(--muted);font-size:13px;padding-top:12px}
-
-footer{
-  margin-top:65px;padding:35px 5%;
-  border-top:1px solid #9a713d;
-  background:#07060b;text-align:center;
-}
-footer .logo{font-size:22px}
-footer p{color:var(--muted);font-size:12px;margin-top:12px}
-.footer-links{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:18px}
-.footer-links a{font-size:12px;color:#c9bed8}
-
+.page{display:none;min-height:60vh}
+.page.active{display:block}
+.back{border:1px solid #8c50bd;color:#d8b2ff;background:#171020;padding:10px 17px;border-radius:9px;margin-bottom:25px}
+.back:hover{border-color:var(--gold);color:var(--gold)}
+.subnav{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:25px}
+.subnav button{background:#171020;border:1px solid #704a91;color:#d9b6f5;padding:10px 15px;border-radius:8px}
+.subnav button:hover{border-color:var(--gold)}
+.article{background:#15111e;border:1px solid #9c773b55;border-radius:15px;padding:25px;margin-top:15px}
+.article h2,.article h3{color:var(--gold);margin:10px 0}
+.article p,.article li{color:#c9bfd3;font-size:14px;margin:8px 0}
+.article ul{padding-left:22px}
+.notice{padding:15px;border-left:3px solid var(--purple);background:#21132d;color:#dfc7f5;border-radius:7px;margin-top:15px;font-size:13px}
+footer{margin-top:60px;text-align:center;padding:30px;border-top:1px solid #9c773b55;background:#07060b}
+footer p{font-size:12px;color:var(--muted);margin-top:10px}
 @media(max-width:950px){
-  .layout{grid-template-columns:1fr 1fr}
-  .layout .middle{grid-column:1/-1;grid-row:1}
-  .cards{grid-template-columns:repeat(2,1fr)}
-  nav{gap:12px}
+.home-layout{grid-template-columns:1fr 1fr}
+.home-layout .middle{grid-column:1/-1;grid-row:1}
 }
 @media(max-width:700px){
-  .menu-btn{display:block}
-  nav{
-    display:none;position:absolute;top:65px;left:0;right:0;
-    padding:20px;background:#100d17;
-    flex-direction:column;align-items:stretch;
-    border-bottom:1px solid var(--gold);
-  }
-  nav.open{display:flex}
-  .nav{padding:13px 5%}
-  .logo{font-size:21px}
-  .hero{min-height:460px}
-  .hero-content{padding:55px 6%}
-  .hero h2{letter-spacing:3px}
-  .hero p{letter-spacing:1px}
-  .layout{grid-template-columns:1fr}
-  .layout .middle{grid-column:auto}
-  .cards{grid-template-columns:1fr}
-  .features{grid-template-columns:1fr}
-  .feature{border-right:0;border-bottom:1px solid #8c6a3b}
-  .stats{grid-template-columns:1fr}
-  .discord-banner{flex-direction:column;align-items:flex-start}
+.menu{display:block}
+nav{display:none;position:absolute;top:65px;left:0;right:0;background:#100d17;padding:20px;flex-direction:column;align-items:stretch}
+nav.open{display:flex}
+nav button{text-align:left;padding:8px}
+.home-layout,.grid{grid-template-columns:1fr}
+.home-layout .middle{grid-column:auto}
+.hero{min-height:390px}
+.hero-inner{padding:50px 6%}
+.stats{grid-template-columns:1fr}
 }
 </style>
 </head>
 
 <body>
-
 <header>
-  <div class="nav">
-    <a href="#domu" class="logo">♛ <span>NEXORA</span></a>
-    <button class="menu-btn" id="menuBtn" aria-label="Otevřít menu">☰</button>
-    <nav id="navigation">
-      <a href="#domu">Domů</a>
-      <a href="#pravidla">Pravidla</a>
-      <a href="#informace">Informace</a>
-      <a href="#evidence">Evidence</a>
-      <a href="#frakce">Frakce</a>
-      <a href="#komunita">Komunita</a>
-      <a href="#podpora">Podpora</a>
-      <a class="discord" href="#komunita">◉ Připojit se na Discord</a>
-    </nav>
-  </div>
+<div class="nav">
+<a href="#" class="logo" onclick="showPage('home');return false">♛ <span>NEXORA</span></a>
+<button class="menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+<nav id="navigation">
+<button onclick="showPage('home')">Domů</button>
+<button onclick="showPage('rules')">Pravidla</button>
+<button onclick="showPage('info')">Informace</button>
+<button onclick="showPage('evidence')">Evidence</button>
+<button onclick="showPage('factions')">Frakce</button>
+<button onclick="showPage('community')">Komunita</button>
+<button onclick="showPage('support')">Podpora</button>
+</nav>
+</div>
 </header>
 
-<section class="hero" id="domu">
-  <div class="hero-content">
-    <div class="eyebrow">VÍTEJ NA OFICIÁLNÍM WEBU</div>
-    <h1>NEXORA</h1>
-    <h2>PREMIUM COMMUNITY</h2>
-    <p>HRAJ &nbsp;•&nbsp; ROLEPLAY &nbsp;•&nbsp; KOMUNIKUJ &nbsp;•&nbsp; PATŘÍŠ K NÁM</p>
-    <a href="#komunita" class="btn btn-gold">Připojit se k NEXORA →</a>
-  </div>
+<main>
+
+<!-- DOMŮ -->
+<section id="home" class="page active">
+<div class="hero">
+<div class="hero-inner">
+<div class="eyebrow">OFICIÁLNÍ WEBOVÉ STRÁNKY</div>
+<h1>NEXORA</h1>
+<h2>PREMIUM COMMUNITY</h2>
+<p>HRAJ • ROLEPLAY • KOMUNIKUJ • PATŘÍŠ K NÁM</p>
+<button class="btn gold" onclick="showPage('community')">PŘIPOJ SE K NÁM →</button>
+</div>
+</div>
+<div style="padding-top:35px">
+<div class="home-layout">
+<div class="side">
+<button onclick="showPage('rules')">▤ Pravidla<small>Pravidla naší komunity</small></button>
+<button onclick="showPage('info')">ⓘ Informace<small>Vše o NEXORA</small></button>
+<button onclick="showPage('evidence')">▣ Evidence<small>RP dokumenty</small></button>
+<button onclick="showPage('factions')">♜ Frakce<small>PČR, HZS a ZZS</small></button>
+<button onclick="showPage('community')">♧ Komunita<small>Discord a eventy</small></button>
+<button onclick="showPage('support')">☏ Podpora<small>Pomoc hráčům</small></button>
+</div>
+<div class="panel middle">
+<h2>♛ O NEXORA</h2>
+<p>Vítej v NEXORA! Jsme RolePlay komunita, která spojuje hráče, kvalitní RP a přátelskou atmosféru. Přidej se k nám a zažij jedinečný herní zážitek.</p>
+<div class="stats">
+<div class="stat"><strong>RP</strong><span>RolePlay</span></div>
+<div class="stat"><strong>TEAM</strong><span>Komunita</span></div>
+<div class="stat"><strong>∞</strong><span>Zážitky</span></div>
+</div>
+<div class="notice">NEXORA – místo, kde začíná tvůj příběh.</div>
+</div>
+<div class="side">
+<button onclick="showPage('evidence')">▣ Vytvořit občanku<small>RP dokumenty</small></button>
+<button onclick="showPage('evidence')">▱ Řidičský průkaz<small>RP dokumenty</small></button>
+<button onclick="showPage('support')">▣ Otevřít tiket<small>Podpora Discord</small></button>
+<button onclick="showPage('rules')">▤ Zobrazit pravidla<small>Důležité informace</small></button>
+</div>
+</div>
+</div>
 </section>
 
-<main>
-  <div class="layout">
+<!-- PRAVIDLA -->
+<section id="rules" class="page">
+<button class="back" onclick="showPage('home')">← Zpět na úvodní stránku</button>
+<h1 class="title">PRAVIDLA</h1>
+<p class="subtitle">Vyber si kategorii pravidel NEXORA.</p>
+<div class="grid">
+<div class="card"><div class="icon">▤</div><h3>RP pravidla</h3><p>Pravidla herního RolePlay.</p><button onclick="showPage('rp-rules')">Otevřít →</button></div>
+<div class="card"><div class="icon">◈</div><h3>Discord pravidla</h3><p>Pravidla na našem Discordu.</p><button onclick="showPage('dc-rules')">Otevřít →</button></div>
+<div class="card"><div class="icon">♜</div><h3>Pravidla frakcí</h3><p>Pravidla jednotlivých složek.</p><button onclick="showPage('faction-rules')">Otevřít →</button></div>
+<div class="card"><div class="icon">♛</div><h3>Pravidla A-Teamu</h3><p>Povinnosti administrátorů.</p><button onclick="showPage('admin-rules')">Otevřít →</button></div>
+</div>
+</section>
 
-    <aside class="menu-list">
-      <a class="menu-card" href="#pravidla">
-        <span class="menu-icon">▤</span>
-        <strong>Pravidla</strong>
-        <small>RP a Discord pravidla, která musíš znát.</small>
-      </a>
-      <a class="menu-card" href="#informace">
-        <span class="menu-icon">ⓘ</span>
-        <strong>Informace</strong>
-        <small>Vše důležité o projektu NEXORA.</small>
-      </a>
-      <a class="menu-card" href="#evidence">
-        <span class="menu-icon">▣</span>
-        <strong>Evidence</strong>
-        <small>RP občanský a řidičský průkaz.</small>
-      </a>
-      <a class="menu-card" href="#frakce">
-        <span class="menu-icon">♜</span>
-        <strong>Frakce</strong>
-        <small>Policie, hasiči a záchranná služba.</small>
-      </a>
-      <a class="menu-card" href="#komunita">
-        <span class="menu-icon">♧</span>
-        <strong>Komunita</strong>
-        <small>Discord, galerie, partneři a eventy.</small>
-      </a>
-      <a class="menu-card" href="#podpora">
-        <span class="menu-icon">☏</span>
-        <strong>Podpora</strong>
-        <small>Vytvoř tiket nebo nás kontaktuj.</small>
-      </a>
-    </aside>
+<section id="rp-rules" class="page">
+<button class="back" onclick="showPage('rules')">← Zpět na pravidla</button>
+<h1 class="title">RP PRAVIDLA</h1>
+<div class="article"><h2>Základní pravidla RolePlay</h2><p>Každý hráč je povinen dodržovat pravidla serveru a respektovat ostatní účastníky RP.</p><ul><li>Chovej se realisticky v rámci možností hry.</li><li>Respektuj ostatní hráče.</li><li>Nepoužívej informace získané mimo RP ve hře.</li><li>Nezneužívej herní mechaniky.</li><li>Respektuj pokyny administračního týmu.</li></ul><div class="notice">Kompletní pravidla doplníme podle finálního nastavení serveru.</div></div>
+</section>
 
-    <section class="panel middle about">
-      <h2>♛ O NEXORA</h2>
-      <p>
-        Vítej v NEXORA! Jsme RolePlay komunita, která spojuje hráče,
-        kvalitní RP a přátelskou atmosféru. Přidej se k nám a zažij
-        jedinečný herní zážitek.
-      </p>
-      <div class="features">
-        <div class="feature"><span>◇</span><strong>Kvalitní RP</strong></div>
-        <div class="feature"><span>♧</span><strong>Aktivní komunita</strong></div>
-        <div class="feature"><span>ϟ</span><strong>Komunitní akce</strong></div>
-      </div>
+<section id="dc-rules" class="page">
+<button class="back" onclick="showPage('rules')">← Zpět na pravidla</button>
+<h1 class="title">DISCORD PRAVIDLA</h1>
+<div class="article"><h2>Chování na Discordu</h2><ul><li>Respektuj všechny členy.</li><li>Neodesílej spam ani reklamu bez povolení.</li><li>Nepoužívej urážlivé nebo nenávistné projevy.</li><li>Dodržuj pokyny moderátorů.</li><li>Nezneužívej tickety ani hlasové kanály.</li></ul></div>
+</section>
 
-      <div class="discord-banner">
-        <div>
-          <h3>◉ Připoj se na náš Discord</h3>
-          <p>Staň se součástí komunity už dnes!</p>
-        </div>
-        <a href="#komunita" class="btn btn-purple">Připojit se →</a>
-      </div>
+<section id="faction-rules" class="page">
+<button class="back" onclick="showPage('rules')">← Zpět na pravidla</button>
+<h1 class="title">PRAVIDLA FRAKCÍ</h1>
+<div class="article"><h2>Povinnosti členů frakcí</h2><ul><li>Dodržovat pravidla své frakce.</li><li>Respektovat nadřízené.</li><li>Správně používat přidělenou techniku.</li><li>Jednat v souladu s RP situací.</li></ul></div>
+</section>
 
-      <div class="stats">
-        <div class="panel stat"><strong>NEXORA</strong><span>Naše komunita</span></div>
-        <div class="panel stat"><strong>RP</strong><span>RolePlay zážitky</span></div>
-        <div class="panel stat"><strong>24/7</strong><span>Online informace</span></div>
-      </div>
-    </section>
+<section id="admin-rules" class="page">
+<button class="back" onclick="showPage('rules')">← Zpět na pravidla</button>
+<h1 class="title">PRAVIDLA A-TEAMU</h1>
+<div class="article"><h2>Povinnosti administrátorů</h2><ul><li>Jednat nestranně a profesionálně.</li><li>Nezneužívat administrátorská oprávnění.</li><li>Řešit podněty podle pravidel.</li><li>Chránit soukromí hráčů.</li></ul></div>
+</section>
 
-    <aside>
-      <section class="panel">
-        <h3 style="color:var(--gold)">ϟ Rychlé akce</h3>
-        <div class="quick-actions">
-          <a class="action" href="#evidence">▣ &nbsp; Vytvořit občanský průkaz</a>
-          <a class="action" href="#evidence">▱ &nbsp; Vytvořit řidičský průkaz</a>
-          <a class="action" href="#podpora">▣ &nbsp; Otevřít tiket</a>
-          <a class="action" href="#pravidla">▤ &nbsp; Zobrazit pravidla</a>
-        </div>
-      </section>
-      <section class="panel" style="margin-top:15px">
-        <h3 style="color:var(--gold)">⚑ Aktuality</h3>
-        <div class="news-item">
-          <div class="news-image"></div>
-          <div>
-            <strong>Vítej na webu NEXORA!</strong>
-            <p>Právě připravujeme nové funkce a obsah.</p>
-          </div>
-        </div>
-      </section>
-    </aside>
-  </div>
+<!-- INFORMACE -->
+<section id="info" class="page">
+<button class="back" onclick="showPage('home')">← Zpět</button>
+<h1 class="title">INFORMACE</h1><p class="subtitle">Vše důležité o naší komunitě.</p>
+<div class="grid">
+<div class="card"><div class="icon">ⓘ</div><h3>O NEXORA</h3><p>Představení projektu.</p><button onclick="showPage('about')">Otevřít →</button></div>
+<div class="card"><div class="icon">➜</div><h3>Jak začít</h3><p>Návod pro nové hráče.</p><button onclick="showPage('start')">Otevřít →</button></div>
+<div class="card"><div class="icon">?</div><h3>FAQ</h3><p>Časté otázky a odpovědi.</p><button onclick="showPage('faq')">Otevřít →</button></div>
+<div class="card"><div class="icon">▧</div><h3>Aktualizace</h3><p>Novinky projektu.</p><button onclick="showPage('updates')">Otevřít →</button></div>
+</div>
+</section>
 
-  <section class="content-section" id="pravidla">
-    <h2 class="section-title">PRAVIDLA</h2>
-    <p class="section-sub">Seznam se s pravidly naší komunity.</p>
-    <div class="cards">
-      <article class="info-card"><div class="symbol">▤</div><h3>RP pravidla</h3><p>Pravidla herního RolePlay a správného chování ve hře.</p><a href="#podpora">Zobrazit pravidla →</a></article>
-      <article class="info-card"><div class="symbol">◈</div><h3>Discord pravidla</h3><p>Pravidla komunikace a chování na našem Discordu.</p><a href="#podpora">Zobrazit pravidla →</a></article>
-      <article class="info-card"><div class="symbol">♜</div><h3>Pravidla A-Teamu</h3><p>Informace a povinnosti členů administračního týmu.</p><a href="#podpora">Zobrazit pravidla →</a></article>
-    </div>
-  </section>
+<section id="about" class="page"><button class="back" onclick="showPage('info')">← Zpět</button><h1 class="title">O NEXORA</h1><div class="article"><p>NEXORA je komunitní projekt zaměřený na RolePlay, společné hraní a budování přátelské komunity.</p></div></section>
+<section id="start" class="page"><button class="back" onclick="showPage('info')">← Zpět</button><h1 class="title">JAK ZAČÍT</h1><div class="article"><h2>Začínáme v NEXORA</h2><ol><li>Připoj se na náš Discord.</li><li>Přečti si pravidla.</li><li>Seznam se s informacemi o serveru.</li><li>Připrav si RP postavu.</li></ol></div></section>
+<section id="faq" class="page"><button class="back" onclick="showPage('info')">← Zpět</button><h1 class="title">FAQ</h1><div class="article"><h3>Co je NEXORA?</h3><p>RolePlay komunitní projekt.</p><h3>Jak se připojím?</h3><p>Přes náš Discord server.</p><h3>Kde požádám o pomoc?</h3><p>V sekci Podpora.</p></div></section>
+<section id="updates" class="page"><button class="back" onclick="showPage('info')">← Zpět</button><h1 class="title">AKTUALIZACE</h1><div class="article"><h2>Web NEXORA</h2><p>První verze webu je právě ve vývoji.</p></div></section>
 
-  <section class="content-section" id="informace">
-    <h2 class="section-title">INFORMACE</h2>
-    <p class="section-sub">Vše, co potřebuješ vědět před vstupem do NEXORA.</p>
-    <div class="cards">
-      <article class="info-card"><div class="symbol">ⓘ</div><h3>O NEXORA</h3><p>Představení našeho projektu, komunity a jejích cílů.</p><a href="#domu">Zjistit více →</a></article>
-      <article class="info-card"><div class="symbol">➜</div><h3>Jak začít</h3><p>Jednoduchý návod pro nové členy a hráče.</p><a href="#komunita">Zjistit více →</a></article>
-      <article class="info-card"><div class="symbol">?</div><h3>FAQ</h3><p>Odpovědi na nejčastější otázky.</p><a href="#faq">Zobrazit FAQ →</a></article>
-    </div>
-  </section>
+<!-- EVIDENCE -->
+<section id="evidence" class="page">
+<button class="back" onclick="showPage('home')">← Zpět</button><h1 class="title">EVIDENCE</h1><p class="subtitle">Fiktivní dokumenty pro herní RP postavy.</p>
+<div class="grid">
+<div class="card"><div class="icon">▣</div><h3>RP občanský průkaz</h3><p>Vytvoření herního občanského průkazu.</p><button onclick="showPage('id-card')">Otevřít →</button></div>
+<div class="card"><div class="icon">▱</div><h3>RP řidičský průkaz</h3><p>Evidence herního oprávnění.</p><button onclick="showPage('driving')">Otevřít →</button></div>
+<div class="card"><div class="icon">▤</div><h3>Registrace postavy</h3><p>Informace o registraci.</p><button onclick="showPage('registration')">Otevřít →</button></div>
+</div>
+</section>
 
-  <section class="content-section" id="evidence">
-    <h2 class="section-title">EVIDENCE</h2>
-    <p class="section-sub">Vytvoř si herní dokumenty pro svou RP postavu.</p>
-    <div class="cards">
-      <article class="info-card"><div class="symbol">▣</div><h3>RP občanský průkaz</h3><p>Vytvoření herního průkazu s údaji tvé RP postavy.</p><a href="#podpora">Připravujeme →</a></article>
-      <article class="info-card"><div class="symbol">▱</div><h3>RP řidičský průkaz</h3><p>Evidence řidičského oprávnění tvé RP postavy.</p><a href="#podpora">Připravujeme →</a></article>
-      <article class="info-card"><div class="symbol">▤</div><h3>Registrace postavy</h3><p>Informace o registraci herní postavy.</p><a href="#podpora">Připravujeme →</a></article>
-    </div>
-  </section>
+<section id="id-card" class="page"><button class="back" onclick="showPage('evidence')">← Zpět</button><h1 class="title">RP OBČANSKÝ PRŮKAZ</h1><div class="article"><p>Formulář pro vytvoření fiktivního herního průkazu připravujeme.</p><div class="notice">Tento dokument bude určen pouze pro herní postavu, nikdy ne pro skutečnou identifikaci.</div></div></section>
+<section id="driving" class="page"><button class="back" onclick="showPage('evidence')">← Zpět</button><h1 class="title">RP ŘIDIČSKÝ PRŮKAZ</h1><div class="article"><p>Formulář pro herní řidičský průkaz připravujeme.</p></div></section>
+<section id="registration" class="page"><button class="back" onclick="showPage('evidence')">← Zpět</button><h1 class="title">REGISTRACE POSTAVY</h1><div class="article"><p>Registrace herních postav bude doplněna.</p></div></section>
 
-  <section class="content-section" id="frakce">
-    <h2 class="section-title">FRAKCE</h2>
-    <p class="section-sub">Poznej jednotlivé složky našeho RolePlay světa.</p>
-    <div class="cards">
-      <article class="info-card"><div class="symbol">♜</div><h3>PČR</h3><p>Policie České republiky – pořádek a bezpečnost.</p><a href="#podpora">Více informací →</a></article>
-      <article class="info-card"><div class="symbol">♨</div><h3>HZS</h3><p>Hasičský záchranný sbor – pomoc a zásahy.</p><a href="#podpora">Více informací →</a></article>
-      <article class="info-card"><div class="symbol">✚</div><h3>ZZS</h3><p>Zdravotnická záchranná služba – péče o pacienty.</p><a href="#podpora">Více informací →</a></article>
-    </div>
-  </section>
+<!-- FRAKCE -->
+<section id="factions" class="page">
+<button class="back" onclick="showPage('home')">← Zpět</button><h1 class="title">FRAKCE</h1><p class="subtitle">Vyber si složku našeho RP světa.</p>
+<div class="grid">
+<div class="card"><div class="icon">♜</div><h3>PČR</h3><p>Policie České republiky.</p><button onclick="showPage('pcr')">Otevřít →</button></div>
+<div class="card"><div class="icon">♨</div><h3>HZS</h3><p>Hasičský záchranný sbor.</p><button onclick="showPage('hzs')">Otevřít →</button></div>
+<div class="card"><div class="icon">✚</div><h3>ZZS</h3><p>Zdravotnická záchranná služba.</p><button onclick="showPage('zzs')">Otevřít →</button></div>
+</div>
+</section>
+<section id="pcr" class="page"><button class="back" onclick="showPage('factions')">← Zpět</button><h1 class="title">PČR</h1><div class="article"><p>Policie České republiky v rámci našeho RolePlay světa.</p><p>Informace o náboru a hodnostech doplníme.</p></div></section>
+<section id="hzs" class="page"><button class="back" onclick="showPage('factions')">← Zpět</button><h1 class="title">HZS</h1><div class="article"><p>Hasičský záchranný sbor v rámci našeho RolePlay světa.</p><p>Informace o náboru a hodnostech doplníme.</p></div></section>
+<section id="zzs" class="page"><button class="back" onclick="showPage('factions')">← Zpět</button><h1 class="title">ZZS</h1><div class="article"><p>Zdravotnická záchranná služba v rámci našeho RolePlay světa.</p><p>Informace o náboru a hodnostech doplníme.</p></div></section>
 
-  <section class="content-section" id="komunita">
-    <h2 class="section-title">KOMUNITA</h2>
-    <p class="section-sub">Buď součástí NEXORA i mimo samotnou hru.</p>
-    <div class="cards">
-      <article class="info-card"><div class="symbol">◉</div><h3>Discord server</h3><p>Připoj se k naší komunitě a komunikuj s ostatními.</p><a href="#podpora">Připravujeme odkaz →</a></article>
-      <article class="info-card"><div class="symbol">▧</div><h3>Galerie</h3><p>Fotografie, videa a momenty z našeho serveru.</p><a href="#podpora">Připravujeme →</a></article>
-      <article class="info-card"><div class="symbol">◇</div><h3>Partneři a eventy</h3><p>Spolupráce, komunitní akce a soutěže.</p><a href="#podpora">Zjistit více →</a></article>
-    </div>
-  </section>
+<!-- KOMUNITA -->
+<section id="community" class="page">
+<button class="back" onclick="showPage('home')">← Zpět</button><h1 class="title">KOMUNITA</h1><div class="grid">
+<div class="card"><div class="icon">◉</div><h3>Discord</h3><p>Oficiální komunitní server.</p><button onclick="showPage('discord')">Otevřít →</button></div>
+<div class="card"><div class="icon">▧</div><h3>Galerie</h3><p>Obrázky a momenty z RP.</p><button onclick="showPage('gallery')">Otevřít →</button></div>
+<div class="card"><div class="icon">◇</div><h3>Partneři</h3><p>Naše spolupráce.</p><button onclick="showPage('partners')">Otevřít →</button></div>
+<div class="card"><div class="icon">★</div><h3>Eventy</h3><p>Komunitní akce.</p><button onclick="showPage('events')">Otevřít →</button></div>
+</div>
+</section>
+<section id="discord" class="page"><button class="back" onclick="showPage('community')">← Zpět</button><h1 class="title">DISCORD</h1><div class="article"><p>Odkaz na oficiální Discord server doplníme.</p></div></section>
+<section id="gallery" class="page"><button class="back" onclick="showPage('community')">← Zpět</button><h1 class="title">GALERIE</h1><div class="article"><p>Galerie fotografií z komunity bude doplněna.</p></div></section>
+<section id="partners" class="page"><button class="back" onclick="showPage('community')">← Zpět</button><h1 class="title">PARTNEŘI</h1><div class="article"><p>Informace o partnerských komunitách budou doplněny.</p></div></section>
+<section id="events" class="page"><button class="back" onclick="showPage('community')">← Zpět</button><h1 class="title">EVENTY</h1><div class="article"><p>Kalendář komunitních akcí bude doplněn.</p></div></section>
 
-  <section class="content-section" id="podpora">
-    <h2 class="section-title">PODPORA</h2>
-    <p class="section-sub">Potřebuješ pomoc? Náš tým podpory ti pomůže.</p>
-    <div class="cards">
-      <article class="info-card"><div class="symbol">▣</div><h3>Vytvořit tiket</h3><p>Založ žádost přes web. Další komunikace bude probíhat pouze na Discordu.</p><a href="#faq">Tiketový systém připravujeme →</a></article>
-      <article class="info-card"><div class="symbol">✉</div><h3>Kontakt</h3><p>Kontaktuj tým NEXORA prostřednictvím našeho Discordu.</p><a href="#komunita">Kontaktovat nás →</a></article>
-      <article class="info-card"><div class="symbol">?</div><h3>Časté otázky</h3><p>Najdi odpověď na běžné problémy a dotazy.</p><a href="#faq">Otevřít FAQ →</a></article>
-    </div>
-  </section>
+<!-- PODPORA -->
+<section id="support" class="page">
+<button class="back" onclick="showPage('home')">← Zpět</button><h1 class="title">PODPORA</h1><p class="subtitle">Potřebuješ pomoc? Vyber možnost.</p>
+<div class="grid">
+<div class="card"><div class="icon">▣</div><h3>Vytvořit tiket</h3><p>Založení soukromého tiketu na Discordu.</p><button onclick="showPage('ticket')">Otevřít →</button></div>
+<div class="card"><div class="icon">✉</div><h3>Kontakt</h3><p>Kontaktování týmu podpory.</p><button onclick="showPage('contact')">Otevřít →</button></div>
+<div class="card"><div class="icon">?</div><h3>FAQ</h3><p>Časté otázky.</p><button onclick="showPage('faq')">Otevřít →</button></div>
+</div>
+</section>
+<section id="ticket" class="page"><button class="back" onclick="showPage('support')">← Zpět</button><h1 class="title">VYTVOŘIT TIKET</h1><div class="article"><p>Tiketový systém připravujeme.</p><p>Po spuštění zde vybereš kategorii a popíšeš problém. Soukromý kanál vytvoří Discord bot a další komunikace bude probíhat výhradně na Discordu.</p></div></section>
+<section id="contact" class="page"><button class="back" onclick="showPage('support')">← Zpět</button><h1 class="title">KONTAKT</h1><div class="article"><p>Kontakt na tým NEXORA doplníme po nastavení Discord serveru.</p></div></section>
 
-  <section class="content-section faq" id="faq">
-    <h2 class="section-title">ČASTÉ OTÁZKY</h2>
-    <details><summary>Co je NEXORA?</summary><p>NEXORA je komunitní projekt zaměřený na RolePlay a společné hraní.</p></details>
-    <details><summary>Jak se mohu připojit?</summary><p>Odkaz na náš Discord doplníme po nastavení serveru.</p></details>
-    <details><summary>Jak fungují tikety?</summary><p>Tiket se bude zakládat na webu a následná komunikace bude probíhat v soukromém kanálu na Discordu.</p></details>
-    <details><summary>Jsou RP průkazy skutečné doklady?</summary><p>Ne. Jde pouze o fiktivní herní dokumenty pro RolePlay, nikoliv o skutečné osobní doklady.</p></details>
-  </section>
 </main>
 
 <footer>
-  <div class="logo">♛ NEXORA</div>
-  <p>© 2026 NEXORA. Všechna práva vyhrazena.</p>
-  <div class="footer-links">
-    <a href="#pravidla">Pravidla</a>
-    <a href="#informace">Informace</a>
-    <a href="#podpora">Podpora</a>
-    <a href="#domu">Zpět nahoru ↑</a>
-  </div>
+<div class="logo">♛ NEXORA</div>
+<p>PREMIUM COMMUNITY • © 2026 NEXORA</p>
+<p>Hraj • RolePlay • Komunikuj</p>
 </footer>
 
 <script>
-const menuBtn = document.getElementById('menuBtn');
-const navigation = document.getElementById('navigation');
-
-menuBtn.addEventListener('click', () => {
-  navigation.classList.toggle('open');
+function showPage(id){
+const target=document.getElementById(id);
+if(!target)return;
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+target.classList.add('active');
+document.getElementById('navigation').classList.remove('open');
+window.scrollTo({top:0,behavior:'smooth'});
+history.replaceState(null,'','#'+id);
+}
+window.addEventListener('load',()=>{
+const id=location.hash.slice(1);
+if(id && document.getElementById(id))showPage(id);
 });
-
-navigation.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navigation.classList.remove('open');
-  });
+window.addEventListener('popstate',()=>{
+const id=location.hash.slice(1)||'home';
+showPage(id);
 });
 </script>
-
 </body>
 </html>
