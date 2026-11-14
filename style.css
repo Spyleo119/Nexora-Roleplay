@@ -1,0 +1,169 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #09080e;
+  color: #f5f2fa;
+  font-family: Arial, sans-serif;
+}
+
+
+.navbar {
+  min-height: 80px;
+  padding: 20px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 15px;
+  background: #100e17;
+  border-bottom: 1px solid #30233f;
+}
+
+.login-button {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  flex-shrink: 0;
+  min-width: 180px;
+  position: relative;
+  z-index: 20;
+}
+
+
+.logo {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.logo span,
+.hero h1 span {
+  color: #c6a34a;
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  color: #c9c3d3;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #c6a34a;
+}
+
+button,
+.primary-button {
+  border: 0;
+  border-radius: 8px;
+  padding: 14px 22px;
+  background: linear-gradient(100deg, #c6a34a, #9066bb);
+  color: #100e17;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.hero {
+  min-height: 570px;
+  padding: 140px 10%;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 50% 20%, #342044 0%, transparent 55%),
+    #09080e;
+}
+
+.eyebrow {
+  color: #c6a34a;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 7vw, 76px);
+  margin-bottom: 24px;
+}
+
+.hero > p:not(.eyebrow) {
+  color: #bcb5c8;
+  max-width: 650px;
+  margin: 0 auto 35px;
+  line-height: 1.8;
+}
+
+.section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 90px 25px;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.section > p:not(.eyebrow) {
+  color: #aaa3b5;
+  line-height: 1.8;
+}
+
+.support {
+  background: #100e17;
+  border: 1px solid #30233f;
+  border-radius: 16px;
+  margin-bottom: 80px;
+  padding: 65px 25px;
+}
+
+.support button {
+  margin-top: 25px;
+}
+
+.status {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+footer {
+  padding: 30px;
+  text-align: center;
+  color: #81798e;
+  border-top: 1px solid #30233f;
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 15px;
+  }
+}
+.login-button {
+  display: inline-block;
+  visibility: visible;
+  opacity: 1;
+  position: relative;
+  z-index: 10;
+}
