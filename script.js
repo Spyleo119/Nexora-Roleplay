@@ -41,14 +41,62 @@ async function checkLogin() {
   }
 }
 
-// Zatím zobrazíme informaci, že tvorba tiketů bude následovat.
-ticketButton.addEventListener("click", () => {
+// Vytvoření ticketu
+ticketButton.addEventListener("click", async () => {
   if (!currentUser) {
     alert("Nejdříve se přihlas přes Discord.");
     return;
   }
 
-  alert("Systém vytváření tiketů právě připravujeme.");
+  const reason = prompt("Napiš důvod, proč potřebuješ podporu:");
+
+  if (reason === null) return;
+
+  if (reason.trim().length === 0) {
+    alert("Musíš vyplnit důvod ticketu.");
+    return;
+  }
+
+  if (reason.trim().length > 300) {
+    alert("Důvod může mít maximálně 300 znaků.");
+    return;
+  }
+
+  ticketButton.disabled = true;
+  ticketButton.textContent = "Vytvářím ticket...";
+
+  try {
+    const response = await fetch(`${API_URL}/api/tickets`, {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        reason: reason.trim()
+      })
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.error || "Ticket se nepodařilo vytvořit.");
+    }
+
+    if (data.channelId) {
+      loginStatus.innerHTML =
+        `Ticket byl vytvořen! <a href="https://discord.com/channels/1540371311568879626/${data.channelId}" target="_blank" rel="noopener noreferrer">Otevřít ticket na Discordu</a>`;
+    } else {
+      loginStatus.textContent =
+        "Ticket byl vytvořen. Zkontroluj Discord.";
+    }
+
+  } catch (error) {
+    alert(error.message || "Nastala chyba při vytváření ticketu.");
+  } finally {
+    ticketButton.disabled = false;
+    ticketButton.textContent = "Vytvořit žádost";
+  }
 });
 
 checkLogin();
